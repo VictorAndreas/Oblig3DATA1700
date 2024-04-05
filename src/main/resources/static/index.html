@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KinoBestillingOblig2</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+<h1>Bestilling av Kinobilletter</h1>
+
+<div id="form">
+    <form>
+        <label for="film">Velg film:</label>
+        <select name="film" id="film">
+            <option value="0">Velg film :D</option>
+            <option value="Star Wars">Star WarsTM</option>
+            <option value="Sonic The Headshot">Sonic The Headshot</option>
+            <option value="Detector Pikachu">Detector Pikachu</option>
+            <option value="Kongens Nja">Kongens Nja</option>
+            <!--Legger til klassen error med id for feilmeldinger-->
+        </select>
+        <p class="error" id="film-e"></p> <br>
+
+        <label for="antall">Antall</label>
+        <input type="text" id="antall" name="antall">
+        <p class="error" id="antall-e"></p><br>
+
+        <label for="fnavn" >Fornavn</label>
+        <input type="text" id="fnavn" class="clear" name="fnavn"> <br>
+        <p class="error" id="fnavn-e"></p>
+
+        <label for="enavn">Etternavn</label>
+        <input type="text" id="enavn" class="clear" name="enavn">
+        <p class="error" id="enavn-e"></p><br>
+
+        <label for="tlf">Tlf</label>
+        <input type="text" id="tlf" name="tlf">
+        <p class="error" id="tlf-e"></p><br>
+
+        <label for="epost">Epost</label>
+        <input type="text" id="epost" name="epost">
+        <p class="error" id="epost-e"></p><br>
+    </form>
+</div>
+
+<!--Button som kjører registrer()-funksjonen ved klikk NB! Bytt til testInput() funksjonen når den er ferdig-->
+<button onclick="inputValidering()">Kjøp Biletter</button>
+<h2>Alle billetter</h2>
+<div id="alleBilletter"></div> <!--For å legge til informasjonen om kjøpte biletter-->
+<button onclick="slettBilett()">Slett billetter</button>
+
+</body>
+</html>
