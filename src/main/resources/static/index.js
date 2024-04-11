@@ -1,6 +1,3 @@
-//Oppretter tomt array fordi håndetering blir lettere
-// let annetArray = [];
-
 //Kjøres når vi klikker registrer-button og kjører registrer() hvis error = 0
 function inputValidering() {
 
