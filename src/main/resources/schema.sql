@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS `Billetter` (
+    `id` INTEGER  PRIMARY KEY AUTO_INCREMENT,
+    `film` VARCHAR(50) NOT NULL,
+    `antall` INTEGER  NOT NULL,
+    `fnavn` VARCHAR(50) NOT NULL,
+    `enavn` VARCHAR(50) NOT NULL,
+    `tlf` VARCHAR(50) NOT NULL,
+    `epost` VARCHAR(50) NOT NULL
+    );

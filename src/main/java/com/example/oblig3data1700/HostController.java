@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.*;
 
 //import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+import static java.util.Collections.sort;
 
 @RestController
 public class HostController {
@@ -16,7 +20,7 @@ public class HostController {
 
     //Etter post fra JS har kjørt, havner billett i Billetter-arayet basert på Biletter konstruktøren
     @PostMapping("/lagre")
-    public void lagreBillett(@RequestBody Billetter billett) {
+    public void lagreBillett(Billetter billett) {
         repos.lagreBillett(billett);
     }
 
@@ -24,6 +28,14 @@ public class HostController {
     @GetMapping("/hentAlle")
     public List<Billetter> hentAlle() {
         List<Billetter> billett = repos.hentAlle();
+
+        Collections.sort(billett, new Comparator<Billetter>() {
+            @Override
+            public int compare(Billetter b1, Billetter b2) {
+                return b1.getEnavn().compareTo(b2.getEnavn()); // Assuming 'getNavn()' returns the name of the Billetter
+            }
+        });
+
         return billett;
     }
 

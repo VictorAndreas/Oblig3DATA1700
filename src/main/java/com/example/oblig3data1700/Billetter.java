@@ -1,6 +1,14 @@
 package com.example.oblig3data1700;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+
 public class Billetter {
+    private int id;
     private String film;
     private int antall;
     private String fnavn;
