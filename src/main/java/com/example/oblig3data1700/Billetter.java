@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 
 public class Billetter {
-    private int id;
+    //private int id;
     private String film;
     private int antall;
     private String fnavn;
@@ -73,4 +73,10 @@ public class Billetter {
     public void setEpost(String epost) {
         this.epost = epost;
     }
+
+
 }
+
+
+
+

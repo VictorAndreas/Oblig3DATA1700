@@ -114,8 +114,11 @@ function formaterData(billetter) {
             "<td>" + billett.fnavn + "</td>" +
             "<td>" + billett.enavn + "</td>" +
             "<td>" + billett.tlf + "</td>" +
-            "<td>" + billett.epost + "</td>";
+            "<td>" + billett.epost + "</td>" +
+            "<td>"+ billett.id + "</td>" +
+            "<td>" + "<button onclick='slettBareEn(" + billett.id + ")'> Slett bare en billett</button>" + "</td>";
         ut += "</tr>";
+        console.log(billett.id);
     }
     $("#alleBilletter").html(ut);
 }
@@ -131,6 +134,14 @@ function slettBilett() {
                 hentAlle();
             }
     });
+}
+
+
+function slettBareEn(id) {
+    let url = "/slettEn?id="+id;
+    $.get(url, function(){
+        hentAlle();
+    })
 }
 
 

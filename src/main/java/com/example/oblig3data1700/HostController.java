@@ -41,5 +41,13 @@ public class HostController {
 
     @DeleteMapping("/slettAlle")
     public void slettBilletter() {repos.slettAlle();}
+
+    @GetMapping("/slettEn")
+    public void slettEnkelt(int id) {
+        repos.slettEn(id);
+    }
+
 }
+
+
 

@@ -34,4 +34,8 @@ public class BillettRepository {
         db.update(sql);
     }
 
+    public void slettEn(int id) {
+        String sql = "DELETE FROM Billetter WHERE id=?;";
+        db.update(sql, id);
+    }
 }
