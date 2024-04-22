@@ -139,6 +139,7 @@ function slettBilett() {
 
 function slettBareEn(id) {
     let url = "/slettEn?id="+id;
+    console.log(id)
     $.get(url, function(){
         hentAlle();
     })

@@ -8,15 +8,15 @@ import jakarta.persistence.Table;
 
 
 public class Billetter {
-    //private int id;
+    private Long id;
     private String film;
-    private int antall;
+    private Long antall;
     private String fnavn;
     private String enavn;
     private String tlf;
     private String epost;
 
-    public Billetter(String film, int antall, String fnavn, String enavn, String tlf, String epost){
+    public Billetter(String film, Long antall, String fnavn, String enavn, String tlf, String epost){
         this.film = film;
         this.antall = antall;
         this.fnavn = fnavn;
@@ -34,11 +34,11 @@ public class Billetter {
         this.film = film;
     }
 
-    public int getAntall() {
+    public Long getAntall() {
         return antall;
     }
 
-    public void setAntall(int antall) {
+    public void setAntall(Long antall) {
         this.antall = antall;
     }
 
@@ -74,7 +74,9 @@ public class Billetter {
         this.epost = epost;
     }
 
-
+    public Long getId() {
+        return id;
+    }
 }
 
 

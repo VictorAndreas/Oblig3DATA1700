@@ -23,7 +23,10 @@ public class BillettRepository {
     public List<Billetter> hentAlle(){
         String sql = "SELECT * FROM Billetter ORDER BY 'ENAVN' DESC" ;
         List<Billetter> alleBilletter =
-                db.query(sql, new BeanPropertyRowMapper(Billetter.class));
+                db.query(sql, new BeanPropertyRowMapper<>(Billetter.class));
+
+        System.out.println(alleBilletter.get(0).getId());
+
         return alleBilletter;
     }
 
@@ -34,7 +37,7 @@ public class BillettRepository {
         db.update(sql);
     }
 
-    public void slettEn(int id) {
+    public void slettEn(Long id) {
         String sql = "DELETE FROM Billetter WHERE id=?;";
         db.update(sql, id);
     }

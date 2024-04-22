@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import static java.util.Collections.sort;
 
@@ -28,22 +29,23 @@ public class HostController {
     @GetMapping("/hentAlle")
     public List<Billetter> hentAlle() {
         List<Billetter> billett = repos.hentAlle();
-
-        Collections.sort(billett, new Comparator<Billetter>() {
+        System.out.println(billett);
+        /*Collections.sort(billett, new Comparator<Billetter>() {
             @Override
             public int compare(Billetter b1, Billetter b2) {
                 return b1.getEnavn().compareTo(b2.getEnavn()); // Assuming 'getNavn()' returns the name of the Billetter
             }
-        });
+        });*/
 
         return billett;
+        //System.out.println();
     }
 
     @DeleteMapping("/slettAlle")
     public void slettBilletter() {repos.slettAlle();}
 
     @GetMapping("/slettEn")
-    public void slettEnkelt(int id) {
+    public void slettEnkelt(Long id) {
         repos.slettEn(id);
     }
 
