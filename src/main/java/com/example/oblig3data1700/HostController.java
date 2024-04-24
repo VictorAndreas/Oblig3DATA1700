@@ -17,19 +17,19 @@ import static java.util.Collections.sort;
 public class HostController {
 
     @Autowired
-    private BillettRepository repos;
+    BillettRepository repos;
 
     //Etter post fra JS har kjørt, havner billett i Billetter-arayet basert på Biletter konstruktøren
     @PostMapping("/lagre")
-    public void lagreBillett(Billetter billett) {
-        repos.lagreBillett(billett);
+    public void lagreBillett(Billetter kjeks) {
+        repos.lagreBillett(kjeks);
     }
 
     //sender info fra billettArray tilbake til JS
     @GetMapping("/hentAlle")
     public List<Billetter> hentAlle() {
         List<Billetter> billett = repos.hentAlle();
-        System.out.println(billett);
+        //System.out.println(billett);
         /*Collections.sort(billett, new Comparator<Billetter>() {
             @Override
             public int compare(Billetter b1, Billetter b2) {
@@ -44,7 +44,7 @@ public class HostController {
     @DeleteMapping("/slettAlle")
     public void slettBilletter() {repos.slettAlle();}
 
-    @GetMapping("/slettEn")
+    @DeleteMapping("/slettEn")
     public void slettEnkelt(Long id) {
         repos.slettEn(id);
     }

@@ -25,8 +25,6 @@ public class BillettRepository {
         List<Billetter> alleBilletter =
                 db.query(sql, new BeanPropertyRowMapper<>(Billetter.class));
 
-        System.out.println(alleBilletter.get(0).getId());
-
         return alleBilletter;
     }
 

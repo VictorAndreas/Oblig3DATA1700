@@ -1,0 +1,1 @@
+INSERT INTO Billetter (film, antall, enavn, fnavn, tlf, epost) VALUES ('StarWarsTM', 2, 'Knut', 'Hansen', '12345678', 'abc@123.no');

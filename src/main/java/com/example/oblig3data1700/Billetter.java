@@ -16,13 +16,14 @@ public class Billetter {
     private String tlf;
     private String epost;
 
-    public Billetter(String film, Long antall, String fnavn, String enavn, String tlf, String epost){
+    public Billetter(String film, Long antall, String fnavn, String enavn, String tlf, String epost, Long id){
         this.film = film;
         this.antall = antall;
         this.fnavn = fnavn;
         this.enavn = enavn;
         this.tlf = tlf;
         this.epost = epost;
+        this.id = id;
     }
 
     public Billetter() {} //Tom konstruktør?
@@ -77,6 +78,7 @@ public class Billetter {
     public Long getId() {
         return id;
     }
+    public void setId(Long id){this.id = id;} //ikke slett, vet ikke hvorfor
 }
 
 

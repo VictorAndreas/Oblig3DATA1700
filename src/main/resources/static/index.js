@@ -55,7 +55,7 @@ function inputValidering() {
 
     if(error === 0) {
         register();
-        console.log("Error er 0");
+        console.log("Input er godkjent");
         clearInput();
     }
 }
@@ -118,7 +118,7 @@ function formaterData(billetter) {
             "<td>"+ billett.id + "</td>" +
             "<td>" + "<button onclick='slettBareEn(" + billett.id + ")'> Slett bare en billett</button>" + "</td>";
         ut += "</tr>";
-        console.log(billett.id);
+        console.log(billett);
     }
     $("#alleBilletter").html(ut);
 }
@@ -139,10 +139,14 @@ function slettBilett() {
 
 function slettBareEn(id) {
     let url = "/slettEn?id="+id;
-    console.log(id)
-    $.get(url, function(){
-        hentAlle();
-    })
+    $.ajax({
+        url: url,
+        method: "delete",
+        success: function () {
+            console.log("en billett er slettet")
+            hentAlle();
+        }
+    });
 }
 
 
