@@ -39,4 +39,10 @@ public class BillettRepository {
         String sql = "DELETE FROM Billetter WHERE id=?;";
         db.update(sql, id);
     }
+
+    public void endreBillett(Billetter enBillett) {
+        String sql = "UPDATE Billetter SET film=?, antall=?, fnavn=?, enavn=?, tlf=?, epost=? WHERE id=?";
+        System.out.println("Antall billetter, oppdatert: "+enBillett.getAntall());
+        db.update(sql, enBillett.getFilm(), enBillett.getAntall(), enBillett.getFnavn(), enBillett.getEnavn(), enBillett.getTlf(), enBillett.getEpost(), enBillett.getId());
+    }
 }

@@ -30,12 +30,12 @@ public class HostController {
     public List<Billetter> hentAlle() {
         List<Billetter> billett = repos.hentAlle();
         //System.out.println(billett);
-        /*Collections.sort(billett, new Comparator<Billetter>() {
+        Collections.sort(billett, new Comparator<Billetter>() {
             @Override
             public int compare(Billetter b1, Billetter b2) {
                 return b1.getEnavn().compareTo(b2.getEnavn()); // Assuming 'getNavn()' returns the name of the Billetter
             }
-        });*/
+        });
 
         return billett;
         //System.out.println();
@@ -47,6 +47,12 @@ public class HostController {
     @DeleteMapping("/slettEn")
     public void slettEnkelt(Long id) {
         repos.slettEn(id);
+    }
+
+    @PostMapping("/endre")
+    public void endreBillett(Billetter billett) {
+        repos.endreBillett(billett);
+        System.out.println("Antall i billett, Host Controller: "+billett.getAntall());
     }
 
 }

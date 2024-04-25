@@ -116,7 +116,8 @@ function formaterData(billetter) {
             "<td>" + billett.tlf + "</td>" +
             "<td>" + billett.epost + "</td>" +
             "<td>"+ billett.id + "</td>" +
-            "<td>" + "<button onclick='slettBareEn(" + billett.id + ")'> Slett bare en billett</button>" + "</td>";
+            "<td>" + "<button onclick='slettBareEn(" + billett.id + ")'> Slett bare en billett</button>" + "</td>" +
+            "<td>" + "<button onclick='endreBillett(" + billett.id + ")'> Endre billett</button>" + "</td>";
         ut += "</tr>";
         console.log(billett);
     }
@@ -150,4 +151,37 @@ function slettBareEn(id) {
 }
 
 
+function endreBillett(id) {
+    //let url = "/endre?id="+id;
+    console.log(id);
+    const billett = {
+        id: id,
+        film: $("#endrefilm").val(),
+        antall: $("#endreantall").val(),
+        fnavn: $("#endrefnavn").val(),
+        enavn: $("#endreenavn").val(),
+        tlf: $("#endretlf").val(),
+        epost: $("#endreepost").val()
+
+        };
+    /*$.ajax({
+        url: url,
+        type: "post",
+        async: false,
+        data: JSON.stringify(billett),
+        contentType: "application/JSON",
+        dataType: "text",
+        success: function (result, status, xhr) {
+            console.log("en billett er endret: "+result);
+            hentAlle();
+        },
+        error: function(xhr){
+            alert("An error occured: "+xhr.status+" "+xhr.statusText);
+        }
+    });*/
+        $.post("/endre", billett, function(){
+            hentAlle();
+        });
+
+}
 

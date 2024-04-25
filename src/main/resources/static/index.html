@@ -6,7 +6,10 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="index.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
 <h1>Bestilling av Kinobilletter</h1>
 
@@ -46,10 +49,47 @@
 </div>
 
 <!--Button som kjører registrer()-funksjonen ved klikk NB! Bytt til testInput() funksjonen når den er ferdig-->
-<button onclick="inputValidering()">Kjøp Biletter</button>
+<!--<button onclick="inputValidering()">Kjøp Biletter</button>-->
+<button type="submit" class="btn btn-primary" onclick="inputValidering()">Kjøp billetter</button>
 <h2>Alle billetter</h2>
 <div id="alleBilletter"></div> <!--For å legge til informasjonen om kjøpte biletter-->
 <button onclick="slettBilett()">Slett alle billetter</button> <Br>
+
+<h2>Endre billetten</h2>
+<div id="endreform">
+    <form>
+        <label for="film">Velg film:</label>
+        <select name="film" id="endrefilm">
+            <option value="0">Velg film :D</option>
+            <option value="Star Wars">Star WarsTM</option>
+            <option value="Sonic The Headshot">Sonic The Headshot</option>
+            <option value="Detector Pikachu">Detector Pikachu</option>
+            <option value="Kongens Nja">Kongens Nja</option>
+            <!--Legger til klassen error med id for feilmeldinger-->
+        </select>
+        <p class="error" id="endrefilm-e"></p> <br>
+
+        <label for="antall">Antall</label>
+        <input type="text" id="endreantall" name="antall">
+        <p class="error" id="endreantall-e"></p><br>
+
+        <label for="fnavn" >Fornavn</label>
+        <input type="text" id="endrefnavn" class="clear" name="fnavn"> <br>
+        <p class="error" id="endrefnavn-e"></p>
+
+        <label for="enavn">Etternavn</label>
+        <input type="text" id="endreenavn" class="clear" name="enavn">
+        <p class="error" id="endreenavn-e"></p><br>
+
+        <label for="tlf">Tlf</label>
+        <input type="text" id="endretlf" name="tlf">
+        <p class="error" id="endretlf-e"></p><br>
+
+        <label for="epost">Epost</label>
+        <input type="text" id="endreepost" name="epost">
+        <p class="error" id="endreepost-e"></p><br>
+    </form>
+</div>
 
 </body>
 </html>
