@@ -79,6 +79,7 @@ function register() {
     $.post("/lagre", billett, function() {
         hentAlle();
     });
+
 }
 
 //Resetter feltene ved å sette det til en tom streng

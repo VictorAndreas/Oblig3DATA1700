@@ -23,6 +23,7 @@ public class HostController {
     @PostMapping("/lagre")
     public void lagreBillett(Billetter kjeks) {
         repos.lagreBillett(kjeks);
+        System.out.println("We posted something");
     }
 
     //sender info fra billettArray tilbake til JS
